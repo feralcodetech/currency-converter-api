@@ -30,7 +30,13 @@ export default function Home() {
             }
             setOutputValue(`${data.result}`)
         } catch (error) {
-            toast.error(error.message, {
+            let msg = ""
+            if (error instanceof Error) {
+                msg = error.message
+            } else {
+                msg = "An unknown error occured."
+            }
+            toast.error(msg, {
                 style: {
                     fontWeight: "bold"
                 }
