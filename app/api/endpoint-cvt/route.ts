@@ -44,7 +44,7 @@ export async function POST(req: Request) {
                 headers: { "Content-Type": "application/json" }
             }
         );
-    } catch (error) {
+    } catch (error: Error) {
         return new Response(
             JSON.stringify({
                 error: error.message
