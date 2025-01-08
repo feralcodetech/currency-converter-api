@@ -95,7 +95,9 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        setInputOption(option.getAttribute("name"))
+                        if (option.getAttribute("name") instanceof string) {
+                            setInputOption(option.getAttribute("name"))
+                        }
                     }
                 }
             >
@@ -116,7 +118,9 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        setOutputOption(option.getAttribute("name"))
+                        if (option.getAttribute("name") instanceof string) {
+                            setOutputOption(option.getAttribute("name"))
+                        }
                     }
                 }
             >
