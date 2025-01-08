@@ -44,7 +44,7 @@ export async function POST(req: Request) {
                 headers: { "Content-Type": "application/json" }
             }
         );
-    } catch (error: unkown) {
+    } catch (error) {
         let msg = ""
         if (error instanceof Error) {
             msg = error.message
