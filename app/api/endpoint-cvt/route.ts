@@ -1,4 +1,4 @@
-const exchangeRates = {
+const exchangeRates: Record<string, number> = {
     "USD": 0.53,
     "EUR": 0.51,
     "JPY": 83.51,
