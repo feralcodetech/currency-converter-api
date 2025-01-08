@@ -95,10 +95,7 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        const name: any = option.getAttribute("name")
-                        if (name instanceof string) {
-                            setInputOption(name)
-                        }
+                        setInputOption(option.getAttribute("name") || "")
                     }
                 }
             >
@@ -119,10 +116,7 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        const name: any = option.getAttribute("name")
-                        if (name instanceof string) {
-                            setOutputOption(name)
-                        }
+                        setOutputOption(option.getAttribute("name") || "")
                     }
                 }
             >
