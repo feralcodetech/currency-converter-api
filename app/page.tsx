@@ -25,7 +25,7 @@ export default function Home() {
             })
             const data = await res.json()
             if (!res.ok) {
-                console.log(data.error)
+                console.error(data.error)
                 throw new Error(`HTTP error! Status: ${res.status}`)
             }
             setOutputValue(`${data.result}`)
@@ -95,13 +95,13 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        setInputOption(option.getAttribute("key") || "")
+                        setInputOption(option.dataset.code || "")
                     }
                 }
             >
                 {
                     currencies.map(([code, label]) => (
-                        <option key={code}>
+                        <option key={code} data-code={code}>
                             {label}
                         </option>
                     ))
@@ -116,13 +116,13 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        setOutputOption(option.getAttribute("key") || "")
+                        setOutputOption(option.dataset.code || "")
                     }
                 }
             >
                 {
                     currencies.map(([code, label]) => (
-                        <option key={code}>
+                        <option key={code} data-code={code}>
                             {label}
                         </option>
                     ))
