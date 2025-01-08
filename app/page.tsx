@@ -95,13 +95,13 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        setInputOption(option.getAttribute("name") || "")
+                        setInputOption(option.getAttribute("key") || "")
                     }
                 }
             >
                 {
                     currencies.map(([code, label]) => (
-                        <option key={label} name={code}>
+                        <option key={code}>
                             {label}
                         </option>
                     ))
@@ -116,13 +116,13 @@ export default function Home() {
                     (ev) => {
                         const target = ev.target
                         const option = target.options[target.selectedIndex]
-                        setOutputOption(option.getAttribute("name") || "")
+                        setOutputOption(option.getAttribute("key") || "")
                     }
                 }
             >
                 {
                     currencies.map(([code, label]) => (
-                        <option key={label} name={code}>
+                        <option key={code}>
                             {label}
                         </option>
                     ))
