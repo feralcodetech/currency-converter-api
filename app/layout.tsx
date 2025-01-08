@@ -39,7 +39,6 @@ export default function RootLayout({children}: Readonly<{children: React.ReactNo
                 {children}
                 <footer>&copy; 2025 Omer Drkić. Licensed under the MIT License.</footer>
                 <Toaster
-                    className="bold"
                     position="bottom-left"
                 />
             </body>
