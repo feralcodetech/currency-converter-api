@@ -44,10 +44,16 @@ export async function POST(req: Request) {
                 headers: { "Content-Type": "application/json" }
             }
         );
-    } catch (error: Error) {
+    } catch (error: unkown) {
+        let msg = ""
+        if (error instanceof Error) {
+            msg = error.message
+        } else {
+            msg = "An unknown error occured."
+        }
         return new Response(
             JSON.stringify({
-                error: error.message
+                error: msg
             }),
             {
                 status: 500,
